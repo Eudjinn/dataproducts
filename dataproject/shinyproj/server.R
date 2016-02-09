@@ -2,6 +2,8 @@ library(shiny)
 library(ggplot2)
 library(Quandl)
 
+Quandl.api_key("r4svfkp2eP1_Lsmg5zbp")
+
 shinyServer(function(input, output) {
 
     # reread oil prices only when related parameters change, 
@@ -16,7 +18,9 @@ shinyServer(function(input, output) {
     })
     
     output$thePlot <- renderPlot({
-        qplot(data = oil(), x = Date, y = Value) + 
+        qplot(data = oil(), 
+              x = Date, 
+              y = Value) + 
             geom_line(color = input$color, 
                       size = 1) +
             labs(title = "Oil prices", 

@@ -33,7 +33,9 @@ shinyUI(fluidPage(
             h6("If you change the color, the graph will be redrawn with selected color but the data will not be reread.")
             ),
             mainPanel(
-                h4("Selected graph parameters:"),
+                h5("Brief summary:"),
+                p("This application has several input fields of different types. Once the values in those fields are changed by the user, new values are displayed below and the plot is redrawn with new parameters and data."),
+                h5("Selected graph parameters:"),
                 textOutput("color"),
                 textOutput("start"),
                 textOutput("end"),

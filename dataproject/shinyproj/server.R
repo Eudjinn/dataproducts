@@ -4,8 +4,8 @@ library(Quandl)
 
 shinyServer(function(input, output) {
 
-    # regenerate the distribution only when its parameters change, 
-    # not when any parameter of the histogram changes
+    # reread oil prices only when related parameters change, 
+    # not when any parameter changes
     oil <- reactive({
         Quandl("DOE/RBRTE", 
                trim_start=input$start, 
